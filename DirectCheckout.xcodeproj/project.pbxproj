@@ -21,6 +21,12 @@
 		3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F522E513AA006D1B26 /* Dictionary.swift */; };
 		3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F822E513FB006D1B26 /* APIError.swift */; };
 		3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F922E513FB006D1B26 /* GatewayError.swift */; };
+		3FD1D20122E51A01006D1B26 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20022E51A01006D1B26 /* Card.swift */; };
+		3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */; };
+		3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20422E51BB5006D1B26 /* Errors.swift */; };
+		3FD1D20822E52B8B006D1B26 /* LoadPublicKeyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */; };
+		3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */; };
+		3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20E22E535CD006D1B26 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		3FD1D1F522E513AA006D1B26 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		3FD1D1F822E513FB006D1B26 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3FD1D1F922E513FB006D1B26 /* GatewayError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayError.swift; sourceTree = "<group>"; };
+		3FD1D20022E51A01006D1B26 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckout.swift; sourceTree = "<group>"; };
+		3FD1D20422E51BB5006D1B26 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPublicKeyUseCase.swift; sourceTree = "<group>"; };
+		3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckoutGateway.swift; sourceTree = "<group>"; };
+		3FD1D20E22E535CD006D1B26 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +105,9 @@
 		3F7B244922E50ED4008DBE34 /* DirectCheckout */ = {
 			isa = PBXGroup;
 			children = (
-				3FD1D1EB22E511B0006D1B26 /* Extensions */,
-				3FD1D1DE22E5102E006D1B26 /* APIClient */,
-				3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */,
-				3F7B244B22E50ED4008DBE34 /* Info.plist */,
+				3FD1D1FE22E519BF006D1B26 /* Dependencies */,
+				3FD1D1FD22E519A8006D1B26 /* SDK */,
+				3FD1D1FC22E51929006D1B26 /* Client */,
 			);
 			path = DirectCheckout;
 			sourceTree = "<group>";
@@ -167,6 +178,69 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		3FD1D1FC22E51929006D1B26 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */,
+				3F7B244B22E50ED4008DBE34 /* Info.plist */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		3FD1D1FD22E519A8006D1B26 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D20D22E535BF006D1B26 /* Urls */,
+				3FD1D20A22E52D2C006D1B26 /* Gateways */,
+				3FD1D20922E52CD1006D1B26 /* Entities */,
+				3FD1D20622E52B6E006D1B26 /* UseCases */,
+				3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */,
+				3FD1D20422E51BB5006D1B26 /* Errors.swift */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		3FD1D1FE22E519BF006D1B26 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D1EB22E511B0006D1B26 /* Extensions */,
+				3FD1D1DE22E5102E006D1B26 /* APIClient */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		3FD1D20622E52B6E006D1B26 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		3FD1D20922E52CD1006D1B26 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D20022E51A01006D1B26 /* Card.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		3FD1D20A22E52D2C006D1B26 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		3FD1D20D22E535BF006D1B26 /* Urls */ = {
+			isa = PBXGroup;
+			children = (
+				3FD1D20E22E535CD006D1B26 /* Endpoints.swift */,
+			);
+			path = Urls;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -225,7 +299,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Diego Trevisan Lara";
+				ORGANIZATIONNAME = "Juno Pagamentos";
 				TargetAttributes = {
 					3F7B244622E50ED4008DBE34 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -276,12 +350,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */,
+				3FD1D20822E52B8B006D1B26 /* LoadPublicKeyUseCase.swift in Sources */,
 				3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
+				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
 				3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */,
 				3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */,
+				3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */,
 				3FD1D1E822E5106F006D1B26 /* APIJsonStrategy.swift in Sources */,
+				3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */,
+				3FD1D20122E51A01006D1B26 /* Card.swift in Sources */,
+				3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */,
 				3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */,
 				3FD1D1ED22E511E3006D1B26 /* Codable.swift in Sources */,
 				3FD1D1E322E5102E006D1B26 /* APIClient.swift in Sources */,
@@ -440,7 +520,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DirectCheckout/Info.plist;
+				INFOPLIST_FILE = DirectCheckout/Client/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +545,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DirectCheckout/Info.plist;
+				INFOPLIST_FILE = DirectCheckout/Client/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

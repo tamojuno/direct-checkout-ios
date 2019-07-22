@@ -3,7 +3,7 @@
 //  DirectCheckoutTests
 //
 //  Created by Diego Trevisan Lara on 21/07/19.
-//  Copyright © 2019 Diego Trevisan Lara. All rights reserved.
+//  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
 import XCTest

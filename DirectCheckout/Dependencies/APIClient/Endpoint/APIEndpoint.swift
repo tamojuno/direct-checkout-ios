@@ -3,10 +3,10 @@
 //  Juno
 //
 //  Created by Diego Trevisan Lara on 12/01/18.
-//  Copyright © 2018 Juno. All rights reserved.
+//  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
-public enum HTTPMethod: String {
+enum HTTPMethod: String {
     case options = "OPTIONS"
     case get     = "GET"
     case head    = "HEAD"
@@ -18,25 +18,25 @@ public enum HTTPMethod: String {
     case connect = "CONNECT"
 }
 
-public enum ParameterEncoding {
+enum ParameterEncoding {
     case urlEncoded(Codable?)
     case queryString(Codable?)
     case json(Codable?)
 }
 
-open class APIEndpoint {
+class APIEndpoint {
     
     let url: APIEndpointUrl
     let method: HTTPMethod
     let encoding: ParameterEncoding
     
-    public init(url: APIEndpointUrl, method: HTTPMethod = .get, encoding: ParameterEncoding = .urlEncoded(nil)) {
+    init(url: APIEndpointUrl, method: HTTPMethod = .get, encoding: ParameterEncoding = .urlEncoded(nil)) {
         self.url = url
         self.method = method
         self.encoding = encoding
     }
     
-    open func build() -> URLRequest {
+    func build() -> URLRequest {
         let url = URL(string: self.url.url)!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
         request.httpMethod = method.rawValue

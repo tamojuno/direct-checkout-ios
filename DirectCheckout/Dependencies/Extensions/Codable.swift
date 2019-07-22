@@ -3,10 +3,10 @@
 //  Juno
 //
 //  Created by Diego Trevisan Lara on 18/01/18.
-//  Copyright © 2018 Juno. All rights reserved.
+//  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
-public extension Decodable {
+extension Decodable {
     
     typealias T = Self
     
@@ -22,7 +22,7 @@ public extension Decodable {
     
 }
 
-public extension Encodable {
+extension Encodable {
     
     var data: Data? {
         let encoder = JSONEncoder()
@@ -40,7 +40,7 @@ public extension Encodable {
     
 }
 
-public extension Array where Element: Codable {
+extension Array where Element: Codable {
     
     var json: [[String: Any]]? {
         return self.compactMap({ $0.json })

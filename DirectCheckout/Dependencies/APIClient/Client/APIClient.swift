@@ -3,14 +3,14 @@
 //  Core
 //
 //  Created by Diego Trevisan Lara on 07/11/18.
-//  Copyright © 2018 Juno. All rights reserved.
+//  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
-public struct APIClient: IAPIClient {
+struct APIClient: IAPIClient {
     
     let strategy: IAPIStrategy
     
-    public func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, Error>) -> Void) {
+    func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, Error>) -> Void) {
         
         let request = endpoint.build()
         

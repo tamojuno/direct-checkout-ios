@@ -3,18 +3,18 @@
 //  Core
 //
 //  Created by Diego Trevisan Lara on 07/11/18.
-//  Copyright © 2018 Juno. All rights reserved.
+//  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
 #warning("Rever erros")
 
-public enum APIError: LocalizedError {
+enum APIError: LocalizedError {
     case remote(message: String)
     case emptyData
     case underlying(error: Error)
     case unknown(request: URLRequest?, response: URLResponse?)
 
-    public var errorDescription: String? {
+    var errorDescription: String? {
         switch self {
         case .remote(let message):
             return message

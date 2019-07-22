@@ -3,14 +3,12 @@
 //  Core
 //
 //  Created by Diego Trevisan Lara on 07/11/18.
-//  Copyright © 2018 Juno. All rights reserved.
+//  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
-public class APIJsonStrategy: IAPIStrategy {
+struct APIJsonStrategy: IAPIStrategy {
     
-    public init() {}
-    
-    public func execute<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void) {
+    func execute<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void) {
         
         do {
             if let error = error {
