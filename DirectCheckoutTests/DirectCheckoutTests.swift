@@ -20,8 +20,22 @@ class DirectCheckoutTests: XCTestCase {
     }
 
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let expectation = XCTestExpectation(description: "teste")
+        
+        DirectCheckout.initialize(token: "73DDC22A9BC22B6B7AE325635D40BD3D3C065CAEAD4C7242CE2E61681C8402C5", environment: .sandbox)
+        
+        let strategy = APIHtmlStrategy()
+        let apiClient = APIClient(strategy: strategy)
+        let gateway = APIDirectCheckoutGateway(apiClient: apiClient)
+        let useCase = GetEncryptionKeyUseCase(gateway: gateway)
+        useCase.get(publicToken: "73DDC22A9BC22B6B7AE325635D40BD3D3C065CAEAD4C7242CE2E61681C8402C5", version: "0.0.2") { result in
+            print(result)
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 10)
+        
     }
 
     func testPerformanceExample() {

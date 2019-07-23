@@ -1,6 +1,6 @@
 //
 //  Dictionary.swift
-//  Juno
+//  DirectCheckout
 //
 //  Created by Diego Trevisan Lara on 25/06/18.
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.

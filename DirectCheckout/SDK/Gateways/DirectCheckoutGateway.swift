@@ -7,34 +7,24 @@
 //
 
 protocol DirectCheckoutGateway {
-    func getPublicEncryptionKey(completion: @escaping (_ result: Result<String, Error>) -> Void)
-    func getCreditCardHash(completion: @escaping (_ result: Result<String, Error>) -> Void)
+    func getEncryptionKey(payload: GetKeyPayload, completion: @escaping (_ result: Result<String, Error>) -> Void)
+    func getCreditCardHash(payload: GetHashPayload, completion: @escaping (_ result: Result<String, Error>) -> Void)
 }
 
 struct APIDirectCheckoutGateway: DirectCheckoutGateway {
     
     let apiClient: APIClient
     
-    func getPublicEncryptionKey(completion: @escaping (Result<String, Error>) -> Void) {
-        
-        let url = APIEndpointUrl(path: Endpoint.getPublicEncryptionKey)
-        let apiEndpoint = APIEndpoint(url: url, method: .get, encoding: .urlEncoded(nil))
-        
-        apiClient.execute(endpoint: apiEndpoint) { (result: Result<String, Error>) in
-            
-        }
-        
+    func getEncryptionKey(payload: GetKeyPayload, completion: @escaping (_ result: Result<String, Error>) -> Void) {
+        let url = APIEndpointUrl(path: Endpoint.getEncryptionKey)
+        let apiEndpoint = APIEndpoint(url: url, method: .post, encoding: .urlEncoded(payload))
+        apiClient.execute(endpoint: apiEndpoint, completion: completion)
     }
     
-    func getCreditCardHash(completion: @escaping (Result<String, Error>) -> Void) {
-        
+    func getCreditCardHash(payload: GetHashPayload, completion: @escaping (_ result: Result<String, Error>) -> Void) {
         let url = APIEndpointUrl(path: Endpoint.getCreditCardHash)
-        let apiEndpoint = APIEndpoint(url: url, method: .get, encoding: .urlEncoded(nil))
-        
-        apiClient.execute(endpoint: apiEndpoint) { (result: Result<String, Error>) in
-            
-        }
-        
+        let apiEndpoint = APIEndpoint(url: url, method: .post, encoding: .urlEncoded(payload))
+        apiClient.execute(endpoint: apiEndpoint, completion: completion)
     }
     
 }

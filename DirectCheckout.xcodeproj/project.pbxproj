@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */; };
+		3F2EFD8E22E698EF004B4C14 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8D22E698EF004B4C14 /* Crypto.swift */; };
+		3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */; };
+		3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */; };
+		3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655722E68ECB00F2E5A9 /* APIResult.swift */; };
 		3F7B245122E50ED4008DBE34 /* DirectCheckout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7B244722E50ED4008DBE34 /* DirectCheckout.framework */; };
 		3F7B245622E50ED4008DBE34 /* DirectCheckoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B245522E50ED4008DBE34 /* DirectCheckoutTests.swift */; };
 		3F7B245822E50ED4008DBE34 /* DirectCheckout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,7 +29,7 @@
 		3FD1D20122E51A01006D1B26 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20022E51A01006D1B26 /* Card.swift */; };
 		3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */; };
 		3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20422E51BB5006D1B26 /* Errors.swift */; };
-		3FD1D20822E52B8B006D1B26 /* LoadPublicKeyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */; };
+		3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */; };
 		3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */; };
 		3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20E22E535CD006D1B26 /* Endpoints.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHtmlStrategy.swift; sourceTree = "<group>"; };
+		3F2EFD8D22E698EF004B4C14 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetKeyPayload.swift; sourceTree = "<group>"; };
+		3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashPayload.swift; sourceTree = "<group>"; };
+		3F61655722E68ECB00F2E5A9 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		3F7B244722E50ED4008DBE34 /* DirectCheckout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DirectCheckout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectCheckout.h; sourceTree = "<group>"; };
 		3F7B244B22E50ED4008DBE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,7 +70,7 @@
 		3FD1D20022E51A01006D1B26 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckout.swift; sourceTree = "<group>"; };
 		3FD1D20422E51BB5006D1B26 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPublicKeyUseCase.swift; sourceTree = "<group>"; };
+		3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEncryptionKeyUseCase.swift; sourceTree = "<group>"; };
 		3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckoutGateway.swift; sourceTree = "<group>"; };
 		3FD1D20E22E535CD006D1B26 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +94,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2EFD8C22E698E5004B4C14 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				3F2EFD8D22E698EF004B4C14 /* Crypto.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		3F61655122E68CBE00F2E5A9 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */,
+				3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3F61655222E68CC500F2E5A9 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				3F61655722E68ECB00F2E5A9 /* APIResult.swift */,
+				3FD1D20022E51A01006D1B26 /* Card.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		3F7B243D22E50ED4008DBE34 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +182,7 @@
 			children = (
 				3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */,
 				3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */,
+				3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */,
 			);
 			path = Strategy;
 			sourceTree = "<group>";
@@ -205,6 +242,7 @@
 			children = (
 				3FD1D1EB22E511B0006D1B26 /* Extensions */,
 				3FD1D1DE22E5102E006D1B26 /* APIClient */,
+				3F2EFD8C22E698E5004B4C14 /* Crypto */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -212,7 +250,7 @@
 		3FD1D20622E52B6E006D1B26 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				3FD1D20722E52B8B006D1B26 /* LoadPublicKeyUseCase.swift */,
+				3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -220,7 +258,8 @@
 		3FD1D20922E52CD1006D1B26 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3FD1D20022E51A01006D1B26 /* Card.swift */,
+				3F61655122E68CBE00F2E5A9 /* Request */,
+				3F61655222E68CC500F2E5A9 /* Response */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -350,16 +389,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */,
-				3FD1D20822E52B8B006D1B26 /* LoadPublicKeyUseCase.swift in Sources */,
+				3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */,
+				3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */,
 				3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
 				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
+				3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */,
+				3F2EFD8E22E698EF004B4C14 /* Crypto.swift in Sources */,
 				3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */,
 				3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */,
 				3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */,
 				3FD1D1E822E5106F006D1B26 /* APIJsonStrategy.swift in Sources */,
+				3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */,
 				3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */,
+				3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */,
 				3FD1D20122E51A01006D1B26 /* Card.swift in Sources */,
 				3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */,
 				3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */,

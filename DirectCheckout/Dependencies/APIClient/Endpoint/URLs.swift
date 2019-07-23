@@ -1,6 +1,6 @@
 //
 //  APIEndpointPath.swift
-//  Juno
+//  DirectCheckout
 //
 //  Created by Diego Trevisan Lara on 19/01/18.
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.

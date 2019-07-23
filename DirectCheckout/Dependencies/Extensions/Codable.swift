@@ -1,6 +1,6 @@
 //
 //  Codability.swift
-//  Juno
+//  DirectCheckout
 //
 //  Created by Diego Trevisan Lara on 18/01/18.
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
@@ -36,6 +36,14 @@ extension Encodable {
         } catch let error {
             return nil
         }
+    }
+    
+    var jsonString: String {
+        if let data = self.data, let jsonString = String(data: data, encoding: .utf8) {
+            return jsonString
+        }
+        
+        return ""
     }
     
 }
