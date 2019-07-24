@@ -19,30 +19,33 @@ class DirectCheckoutTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        
-        let expectation = XCTestExpectation(description: "teste")
-        
-        DirectCheckout.initialize(token: "73DDC22A9BC22B6B7AE325635D40BD3D3C065CAEAD4C7242CE2E61681C8402C5", environment: .sandbox)
-        
-        let strategy = APIHtmlStrategy()
-        let apiClient = APIClient(strategy: strategy)
-        let gateway = APIDirectCheckoutGateway(apiClient: apiClient)
-        let useCase = GetEncryptionKeyUseCase(gateway: gateway)
-        useCase.get(publicToken: "73DDC22A9BC22B6B7AE325635D40BD3D3C065CAEAD4C7242CE2E61681C8402C5", version: "0.0.2") { result in
-            print(result)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 10)
-        
+//    func testExample() {
+//
+//        let expectation = XCTestExpectation(description: "teste")
+//
+//        DirectCheckout.initialize(publicToken: "AF2261E2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
+//
+//        let card = Card(cardNumber: "", holderName: "", securityCode: "", expirationMonth: "", expirationYear: "")
+//        DirectCheckout.getCardHash(card) { result in
+//            print(result)
+//            expectation.fulfill()
+//        }
+//
+//        wait(for: [expectation], timeout: 10)
+//
+//    }
+    
+    func testValidSecurityCode() {
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("4111111111111111", "666")) //visa
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("5105105105105100", "666")) //master
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testValidExpireDate() {
+        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "05", year: "2018"))
+        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "06", year: "2019"))
+        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "07", year: "2019"))
+        XCTAssertTrue(DirectCheckout.isValidExpireDate(month: "08", year: "2019"))
+        XCTAssertTrue(DirectCheckout.isValidExpireDate(month: "09", year: "2020"))
     }
 
 }

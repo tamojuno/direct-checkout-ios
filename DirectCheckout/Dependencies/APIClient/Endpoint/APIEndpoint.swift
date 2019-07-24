@@ -45,14 +45,14 @@ class APIEndpoint {
             
         case .urlEncoded(let parameter):
             request.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"]
-            request.httpBody = parameter?.json?.queryString.data(using: .utf8)
+            request.httpBody = try? parameter?.json().queryString.data(using: .utf8)
             
         case .json(let parameter):
             request.allHTTPHeaderFields = ["Content-Type": "application/json"]
-            request.httpBody = parameter?.data
+            request.httpBody = try? parameter?.data()
             
         case .queryString(let parameter):
-            if let queryString = parameter?.json?.queryString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
+            if let queryString = try? parameter?.json().queryString.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) {
                 request.url = URL(string: "\(self.url.url)?\(queryString)")!
             }
         }

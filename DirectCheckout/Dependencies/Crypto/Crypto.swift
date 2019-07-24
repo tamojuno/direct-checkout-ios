@@ -15,9 +15,11 @@ import CommonCrypto
 
 class Crypto {
     
-    func sha256(str: String) -> String {
+    func sha256(source: String, key: String) -> String {
         
-        if let strData = str.data(using: String.Encoding.utf8) {
+        let input = source + key
+        
+        if let strData = input.data(using: String.Encoding.utf8) {
             var digest = [UInt8](repeating: 0, count:Int(CC_SHA256_DIGEST_LENGTH))
             strData.withUnsafeBytes {
                 _ = CC_SHA256($0.baseAddress, UInt32(strData.count), &digest)
@@ -33,7 +35,5 @@ class Crypto {
         
         return ""
     }
-    
-    
     
 }

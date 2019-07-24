@@ -9,7 +9,7 @@
 enum Endpoint: String, EndpointPath {
     
     case getEncryptionKey           = "/get-public-encryption-key.json"
-    case getCreditCardHash          = "get-credit-card-hash.json"
+    case getCreditCardHash          = "/get-credit-card-hash.json"
     
     var value: String {
         return rawValue

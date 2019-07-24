@@ -15,6 +15,9 @@
 		3F7B245122E50ED4008DBE34 /* DirectCheckout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7B244722E50ED4008DBE34 /* DirectCheckout.framework */; };
 		3F7B245622E50ED4008DBE34 /* DirectCheckoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7B245522E50ED4008DBE34 /* DirectCheckoutTests.swift */; };
 		3F7B245822E50ED4008DBE34 /* DirectCheckout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FC82F3F22E7D1FE005202BD /* GetCreditCardHashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F3E22E7D1FE005202BD /* GetCreditCardHashUseCase.swift */; };
+		3FC82F4122E7DA2E005202BD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4022E7DA2E005202BD /* String.swift */; };
+		3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4222E7EB9D005202BD /* CardLabel.swift */; };
 		3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */; };
 		3FD1D1E322E5102E006D1B26 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E122E5102E006D1B26 /* APIClient.swift */; };
 		3FD1D1E822E5106F006D1B26 /* APIJsonStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */; };
@@ -56,6 +59,9 @@
 		3F7B245022E50ED4008DBE34 /* DirectCheckoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectCheckoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7B245522E50ED4008DBE34 /* DirectCheckoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckoutTests.swift; sourceTree = "<group>"; };
 		3F7B245722E50ED4008DBE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FC82F3E22E7D1FE005202BD /* GetCreditCardHashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreditCardHashUseCase.swift; sourceTree = "<group>"; };
+		3FC82F4022E7DA2E005202BD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3FC82F4222E7EB9D005202BD /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
 		3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPIClient.swift; sourceTree = "<group>"; };
 		3FD1D1E122E5102E006D1B26 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIJsonStrategy.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 			children = (
 				3F61655722E68ECB00F2E5A9 /* APIResult.swift */,
 				3FD1D20022E51A01006D1B26 /* Card.swift */,
+				3FC82F4222E7EB9D005202BD /* CardLabel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 				3FD1D1EC22E511E3006D1B26 /* Codable.swift */,
 				3FD1D1EE22E5121D006D1B26 /* Optional.swift */,
 				3FD1D1F522E513AA006D1B26 /* Dictionary.swift */,
+				3FC82F4022E7DA2E005202BD /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */,
+				3FC82F3E22E7D1FE005202BD /* GetCreditCardHashUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -389,11 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */,
+				3FC82F3F22E7D1FE005202BD /* GetCreditCardHashUseCase.swift in Sources */,
 				3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */,
 				3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */,
 				3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
+				3FC82F4122E7DA2E005202BD /* String.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
+				3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */,
 				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
 				3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */,
 				3F2EFD8E22E698EF004B4C14 /* Crypto.swift in Sources */,

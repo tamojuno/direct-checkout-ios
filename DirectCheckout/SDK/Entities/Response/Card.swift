@@ -14,9 +14,8 @@ public struct Card: Codable {
     let expirationMonth: String
     let expirationYear: String
     
-    func encrypt(key: String) -> String {
-        let jsonString = self.jsonString
-        return Crypto().sha256(str: jsonString)
+    func encrypt(key: String) throws -> String {
+        return try jsonString().encrypt(key: key).base64()
     }
     
 }

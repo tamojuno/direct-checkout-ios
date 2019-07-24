@@ -24,34 +24,19 @@ extension Decodable {
 
 extension Encodable {
     
-    var data: Data? {
+    func data() throws -> Data {
         let encoder = JSONEncoder()
-        return try? encoder.encode(self)
+        return try encoder.encode(self)
     }
     
-    var json: [String: Any]? {
-        do {
-            let data = try self.data.orThrow()
-            return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-        } catch let error {
-            return nil
-        }
+    func json() throws -> [String: Any] {
+        let json = try JSONSerialization.jsonObject(with: data(), options: [])
+        return json as! [String: Any]
     }
     
-    var jsonString: String {
-        if let data = self.data, let jsonString = String(data: data, encoding: .utf8) {
-            return jsonString
-        }
-        
-        return ""
-    }
-    
-}
-
-extension Array where Element: Codable {
-    
-    var json: [[String: Any]]? {
-        return self.compactMap({ $0.json })
+    func jsonString() throws -> String {
+        let jsonString = try String(data: data(), encoding: .utf8).orThrow()
+        return jsonString
     }
     
 }
