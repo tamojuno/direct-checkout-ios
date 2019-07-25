@@ -19,21 +19,21 @@ class DirectCheckoutTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-//    func testExample() {
-//
-//        let expectation = XCTestExpectation(description: "teste")
-//
-//        DirectCheckout.initialize(publicToken: "AF2261E2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
-//
-//        let card = Card(cardNumber: "", holderName: "", securityCode: "", expirationMonth: "", expirationYear: "")
-//        DirectCheckout.getCardHash(card) { result in
-//            print(result)
-//            expectation.fulfill()
-//        }
-//
-//        wait(for: [expectation], timeout: 10)
-//
-//    }
+    func testExample() {
+
+        let expectation = XCTestExpectation(description: "teste")
+
+        DirectCheckout.initialize(publicToken: "AF2261E2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
+
+        let card = Card(cardNumber: "", holderName: "", securityCode: "", expirationMonth: "", expirationYear: "")
+        DirectCheckout.getCardHash(card) { result in
+            print(result)
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 10)
+
+    }
     
     func testValidSecurityCode() {
         XCTAssertTrue(DirectCheckout.isValidSecurityCode("4111111111111111", "666")) //visa

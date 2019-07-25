@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */; };
 		3F2EFD8E22E698EF004B4C14 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8D22E698EF004B4C14 /* Crypto.swift */; };
+		3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37936322E93EE5000D1DF7 /* CardUtils.swift */; };
 		3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */; };
 		3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */; };
 		3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655722E68ECB00F2E5A9 /* APIResult.swift */; };
@@ -20,7 +21,6 @@
 		3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4222E7EB9D005202BD /* CardLabel.swift */; };
 		3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */; };
 		3FD1D1E322E5102E006D1B26 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E122E5102E006D1B26 /* APIClient.swift */; };
-		3FD1D1E822E5106F006D1B26 /* APIJsonStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */; };
 		3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */; };
 		3FD1D1ED22E511E3006D1B26 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1EC22E511E3006D1B26 /* Codable.swift */; };
 		3FD1D1EF22E5121D006D1B26 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1EE22E5121D006D1B26 /* Optional.swift */; };
@@ -50,6 +50,7 @@
 /* Begin PBXFileReference section */
 		3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHtmlStrategy.swift; sourceTree = "<group>"; };
 		3F2EFD8D22E698EF004B4C14 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		3F37936322E93EE5000D1DF7 /* CardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtils.swift; sourceTree = "<group>"; };
 		3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetKeyPayload.swift; sourceTree = "<group>"; };
 		3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashPayload.swift; sourceTree = "<group>"; };
 		3F61655722E68ECB00F2E5A9 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		3FC82F4222E7EB9D005202BD /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
 		3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPIClient.swift; sourceTree = "<group>"; };
 		3FD1D1E122E5102E006D1B26 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIJsonStrategy.swift; sourceTree = "<group>"; };
 		3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPIStrategy.swift; sourceTree = "<group>"; };
 		3FD1D1EC22E511E3006D1B26 /* Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		3FD1D1EE22E5121D006D1B26 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
@@ -108,6 +108,14 @@
 			path = Crypto;
 			sourceTree = "<group>";
 		};
+		3F37936222E93ED9000D1DF7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3F37936322E93EE5000D1DF7 /* CardUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		3F61655122E68CBE00F2E5A9 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +156,9 @@
 		3F7B244922E50ED4008DBE34 /* DirectCheckout */ = {
 			isa = PBXGroup;
 			children = (
+				3FD1D1FC22E51929006D1B26 /* Client */,
 				3FD1D1FE22E519BF006D1B26 /* Dependencies */,
 				3FD1D1FD22E519A8006D1B26 /* SDK */,
-				3FD1D1FC22E51929006D1B26 /* Client */,
 			);
 			path = DirectCheckout;
 			sourceTree = "<group>";
@@ -188,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */,
-				3FD1D1E522E5106F006D1B26 /* APIJsonStrategy.swift */,
 				3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */,
 			);
 			path = Strategy;
@@ -235,6 +242,7 @@
 		3FD1D1FD22E519A8006D1B26 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				3F37936222E93ED9000D1DF7 /* Utils */,
 				3FD1D20D22E535BF006D1B26 /* Urls */,
 				3FD1D20A22E52D2C006D1B26 /* Gateways */,
 				3FD1D20922E52CD1006D1B26 /* Entities */,
@@ -402,6 +410,7 @@
 				3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */,
 				3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */,
 				3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */,
+				3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FC82F4122E7DA2E005202BD /* String.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
@@ -412,7 +421,6 @@
 				3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */,
 				3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */,
 				3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */,
-				3FD1D1E822E5106F006D1B26 /* APIJsonStrategy.swift in Sources */,
 				3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */,
 				3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */,
 				3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */,

@@ -11,22 +11,18 @@ struct APIResult<T: Decodable>: Decodable {
     var data: T?
     var errorMessage: String?
     
-    func makeResult() throws -> Result<T, Error> {
-        if success, let data = data ?? VoidResponse() as? T {
+    func makeResult() throws -> Result<T, DirectCheckoutError> {
+        if success, let data = data {
             return .success(data)
         }
         
         guard let errorMessage = errorMessage else {
-            return .failure(APIError.emptyData)
+            return .failure(DirectCheckoutError.unknown("A requisição falou mas o servidor não retorno uma mensagem de erro."))
         }
         
         let messageData = try errorMessage.data(using: String.Encoding.unicode).orThrow()
         let attrString = try NSAttributedString(data: messageData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-        return .failure(APIError.remote(message: attrString.string))
+        return .failure(DirectCheckoutError.remote(attrString.string))
     }
-    
-}
-
-struct VoidResponse: Decodable {
     
 }

@@ -10,7 +10,7 @@ struct APIClient: IAPIClient {
     
     let strategy: IAPIStrategy
     
-    func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, Error>) -> Void) {
+    func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, DirectCheckoutError>) -> Void) {
         
         let request = endpoint.build()
         

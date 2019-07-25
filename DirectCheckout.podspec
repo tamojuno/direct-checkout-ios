@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
 
-  spec.name         = "JunoDirectCheckout"
+  spec.name         = "DirectCheckout"
   spec.version      = "1.0.0"
-  spec.summary      = "A short description of DirectCheckout."
+  spec.summary      = "SDK para criptografia e validação de dados do cartão de crédito para integração com a API de pagamentos da Juno/BoletoBancário."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -10,9 +10,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+  SDK para criptografia e validação de dados do cartão de crédido para integração com a API de pagamentos da Juno/BoletoBancário.
                    DESC
 
-  spec.homepage     = "http://EXAMPLE/DirectCheckout"
+  spec.homepage     = "http://www.juno.com.br"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -23,8 +24,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT (example)"
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -50,7 +51,7 @@ Pod::Spec.new do |spec|
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
+  spec.ios.deployment_target = "12.0"
   # spec.osx.deployment_target = "10.7"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
@@ -62,7 +63,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/DirectCheckout.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/tamojuno/direct-checkout-ios.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -73,7 +74,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "DirectCheckout", "DirectCheckout/**/*.{h,m}"
+  spec.source_files  = "DirectCheckout", "DirectCheckout/**/*.{h,m,swift}"
   # spec.exclude_files = "DirectCheckout/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -115,6 +116,6 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # spec.dependency "JSONKit", "~> 1.4"
+  spec.dependency "SwiftyRSA", "~> 1.5.0"
 
 end

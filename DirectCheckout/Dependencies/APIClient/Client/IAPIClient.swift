@@ -7,7 +7,7 @@
 //
 
 protocol IAPIClient {
-    func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, Error>) -> Void)
+    func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, DirectCheckoutError>) -> Void)
 }
 
 extension IAPIClient {

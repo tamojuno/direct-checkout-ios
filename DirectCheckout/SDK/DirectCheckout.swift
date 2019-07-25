@@ -15,6 +15,8 @@ public class DirectCheckout {
         APIEnvionment.current = environment
     }
     
+    // MARK: - Get hash
+    
     public static func getCardHash(_ card: Card, completion: @escaping (Result<String, DirectCheckoutError>) -> Void) {
         
         guard let publicToken = publicToken else {
@@ -41,39 +43,34 @@ public class DirectCheckout {
                         completion(.success(cardHash))
                         
                     } catch let error {
-                        print(error)
+                        completion(.failure(.underlying(error)))
                     }
                     
                 })
                 
             } catch let error {
-                print(result)
+                completion(.failure(.underlying(error)))
             }
             
         }
     }
     
+    // MARK: - Aux functions
+    
     public static func isValidCardNumber(_ cardNumber: String) -> Bool {
-//        let cardNo = cardNumber.replacingOccurrences(of: " ", with: "")
-//        let type = getCardType(cardNumber)
-//        return type != null && type.cardLength == cardNo.length && validateNum(cardNo)
-        return false
+        return CardUtils.validateNumber(cardNumber)
+    }
+    
+    static func getCardType(_ cardNumber: String) -> String? {
+        return CardUtils.getCardType(cardNumber)?.name
     }
     
     public static func isValidSecurityCode(_ cardNumber: String, _ securityCode: String) -> Bool {
-        let cardLabel = CardLabel.all().first(where: { $0.matches(cardNumber: cardNumber) })
-        return cardLabel?.cvcLength == securityCode.count
+        return CardUtils.validateCVC(cardNumber, securityCode)
     }
     
     public static func isValidExpireDate(month: String, year: String) -> Bool {
-        guard let expirationMonth = Int(month), let expirationYear = Int(year), expirationMonth > 0, expirationYear > 0 else {
-            return false
-        }
-        
-        let currentMonth = Calendar.current.component(.month, from: Date())
-        let currentYear = Calendar.current.component(.year, from: Date())
-        
-        return expirationYear >= currentYear ? (expirationYear == currentYear ? expirationMonth > currentMonth : true) : false
+        return CardUtils.validateExpireDate(month, year)
     }
     
     public static func isValidCardData(_ card: Card) throws -> Bool {
@@ -93,11 +90,6 @@ public class DirectCheckout {
 //        }
         
         return true
-    }
-    
-    public static func getCardType(_ cardNumber: String) -> String? {
-        let cardLabel = CardLabel.all().first(where: { $0.matches(cardNumber: cardNumber) })
-        return cardLabel?.name
     }
     
 }
