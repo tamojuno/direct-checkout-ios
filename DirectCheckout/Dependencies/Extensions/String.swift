@@ -8,10 +8,6 @@
 
 extension String {
     
-    func encrypt(key: String) throws -> String {
-        return Crypto().sha256(source: self, key: key)
-    }
-    
     func base64() throws -> String {
         return try self.data(using: .utf8).orThrow().base64EncodedString()
     }

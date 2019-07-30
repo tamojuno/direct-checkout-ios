@@ -41,15 +41,18 @@ public class DirectCheckout {
                     do {
                         let cardHash = try result.get()
                         completion(.success(cardHash))
-                        
-                    } catch let error {
-                        completion(.failure(.underlying(error)))
+                    } catch let error as DirectCheckoutError {
+                        completion(.failure(error))
+                    } catch {
+                        completion(.failure(DirectCheckoutError.underlying(error)))
                     }
                     
                 })
                 
-            } catch let error {
-                completion(.failure(.underlying(error)))
+            } catch let error as DirectCheckoutError {
+                completion(.failure(error))
+            } catch {
+                completion(.failure(DirectCheckoutError.underlying(error)))
             }
             
         }
