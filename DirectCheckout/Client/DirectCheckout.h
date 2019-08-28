@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RSA.h"
 
 //! Project version number for DirectCheckout.
 FOUNDATION_EXPORT double DirectCheckoutVersionNumber;

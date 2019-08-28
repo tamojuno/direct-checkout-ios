@@ -6,7 +6,7 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-import SwiftyRSA
+//import CryptorRSA
 
 public struct Card: Codable {
     
@@ -25,15 +25,11 @@ public struct Card: Codable {
     }
     
     func encrypt(key: String) throws -> String {
-//        let jsonString = try self.jsonString()
-//        let encrypted = RSA.encryptString(jsonString, publicKey: key)
+        let publicKey = try CryptorRSA.createPublicKey(withPEM: key)
+        let plainText = try CryptorRSA.createPlaintext(with: data())
+        let encrypted = try plainText.encrypted(with: publicKey, algorithm: .sha256)
         
-        let publicKey = try PublicKey(pemEncoded: key)
-        let clear = try ClearMessage(string: self.jsonString(), using: .utf8)
-        let encrypted = try clear.encrypted(with: publicKey, padding: .PKCS1)
-
-        return encrypted.base64String.addingPercentEncoding(withAllowedCharacters:.alphanumerics)!
-//        return encrypted!.addingPercentEncoding(withAllowedCharacters:.alphanumerics)!
+        return encrypted!.base64String.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
     }
     
 }

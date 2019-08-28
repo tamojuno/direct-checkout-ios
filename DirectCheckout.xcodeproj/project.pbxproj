@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */; };
-		3F337AFE22EA822100CD8858 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F337AFC22EA822100CD8858 /* RSA.m */; };
-		3F337AFF22EA822100CD8858 /* RSA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F337AFD22EA822100CD8858 /* RSA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37936322E93EE5000D1DF7 /* CardUtils.swift */; };
 		3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */; };
 		3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */; };
@@ -36,6 +34,14 @@
 		3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */; };
 		3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */; };
 		3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20E22E535CD006D1B26 /* Endpoints.swift */; };
+		3FD4F64F23161A6E0032EC95 /* CryptorRSAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */; };
+		3FD4F65023161A6E0032EC95 /* CryptorRSAErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */; };
+		3FD4F65123161A6E0032EC95 /* CryptorRSAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */; };
+		3FD4F65223161A6E0032EC95 /* CryptorRSAKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */; };
+		3FD4F65323161A6E0032EC95 /* SSLPointerTricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64B23161A6E0032EC95 /* SSLPointerTricks.swift */; };
+		3FD4F65423161A6E0032EC95 /* CryptorRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */; };
+		3FD4F65523161A6E0032EC95 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */; };
+		3FD4F65623161A6E0032EC95 /* CryptorRSADigest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +56,6 @@
 
 /* Begin PBXFileReference section */
 		3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHtmlStrategy.swift; sourceTree = "<group>"; };
-		3F337AFC22EA822100CD8858 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
-		3F337AFD22EA822100CD8858 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
 		3F37936322E93EE5000D1DF7 /* CardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtils.swift; sourceTree = "<group>"; };
 		3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetKeyPayload.swift; sourceTree = "<group>"; };
 		3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashPayload.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 		3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEncryptionKeyUseCase.swift; sourceTree = "<group>"; };
 		3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckoutGateway.swift; sourceTree = "<group>"; };
 		3FD1D20E22E535CD006D1B26 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAConstants.swift; sourceTree = "<group>"; };
+		3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAErrors.swift; sourceTree = "<group>"; };
+		3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAUtilities.swift; sourceTree = "<group>"; };
+		3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAKey.swift; sourceTree = "<group>"; };
+		3FD4F64B23161A6E0032EC95 /* SSLPointerTricks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSLPointerTricks.swift; sourceTree = "<group>"; };
+		3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSA.swift; sourceTree = "<group>"; };
+		3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSADigest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,15 +114,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F2EFD8C22E698E5004B4C14 /* Crypto */ = {
-			isa = PBXGroup;
-			children = (
-				3F337AFD22EA822100CD8858 /* RSA.h */,
-				3F337AFC22EA822100CD8858 /* RSA.m */,
-			);
-			path = Crypto;
-			sourceTree = "<group>";
-		};
 		3F37936222E93ED9000D1DF7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +264,7 @@
 			children = (
 				3FD1D1EB22E511B0006D1B26 /* Extensions */,
 				3FD1D1DE22E5102E006D1B26 /* APIClient */,
-				3F2EFD8C22E698E5004B4C14 /* Crypto */,
+				3FD4F64623161A6E0032EC95 /* Crypto */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -300,6 +303,21 @@
 			path = Urls;
 			sourceTree = "<group>";
 		};
+		3FD4F64623161A6E0032EC95 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */,
+				3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */,
+				3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */,
+				3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */,
+				3FD4F64B23161A6E0032EC95 /* SSLPointerTricks.swift */,
+				3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */,
+				3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */,
+				3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -308,7 +326,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7B245822E50ED4008DBE34 /* DirectCheckout.h in Headers */,
-				3F337AFF22EA822100CD8858 /* RSA.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD4F65223161A6E0032EC95 /* CryptorRSAKey.swift in Sources */,
 				3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */,
+				3FD4F65023161A6E0032EC95 /* CryptorRSAErrors.swift in Sources */,
 				3FC82F3F22E7D1FE005202BD /* GetCreditCardHashUseCase.swift in Sources */,
 				3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */,
 				3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */,
@@ -418,21 +437,26 @@
 				3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FC82F4122E7DA2E005202BD /* String.swift in Sources */,
-				3F337AFE22EA822100CD8858 /* RSA.m in Sources */,
+				3FD4F65623161A6E0032EC95 /* CryptorRSADigest.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
 				3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */,
 				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
 				3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */,
 				3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */,
 				3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */,
+				3FD4F65323161A6E0032EC95 /* SSLPointerTricks.swift in Sources */,
 				3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */,
+				3FD4F65523161A6E0032EC95 /* Data+Extensions.swift in Sources */,
+				3FD4F65423161A6E0032EC95 /* CryptorRSA.swift in Sources */,
 				3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */,
 				3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */,
 				3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */,
+				3FD4F64F23161A6E0032EC95 /* CryptorRSAConstants.swift in Sources */,
 				3FD1D20122E51A01006D1B26 /* Card.swift in Sources */,
 				3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */,
 				3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */,
 				3FD1D1ED22E511E3006D1B26 /* Codable.swift in Sources */,
+				3FD4F65123161A6E0032EC95 /* CryptorRSAUtilities.swift in Sources */,
 				3FD1D1E322E5102E006D1B26 /* APIClient.swift in Sources */,
 				3FD1D1EF22E5121D006D1B26 /* Optional.swift in Sources */,
 			);
