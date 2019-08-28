@@ -25,7 +25,7 @@ class DirectCheckoutTests: XCTestCase {
 
         DirectCheckout.initialize(publicToken: "AF2261E2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
 
-        let card = Card(cardNumber: "", holderName: "", securityCode: "", expirationMonth: "", expirationYear: "")
+        let card = Card(cardNumber: "5448280000000007", holderName: "Diego", securityCode: "123", expirationMonth: "01", expirationYear: "2020")
         DirectCheckout.getCardHash(card) { result in
             print(result)
             expectation.fulfill()
