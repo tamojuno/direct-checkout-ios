@@ -34,13 +34,11 @@
 		3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */; };
 		3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */; };
 		3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20E22E535CD006D1B26 /* Endpoints.swift */; };
-		3FD4F64F23161A6E0032EC95 /* CryptorRSAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */; };
 		3FD4F65023161A6E0032EC95 /* CryptorRSAErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */; };
 		3FD4F65123161A6E0032EC95 /* CryptorRSAUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */; };
 		3FD4F65223161A6E0032EC95 /* CryptorRSAKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */; };
 		3FD4F65423161A6E0032EC95 /* CryptorRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */; };
 		3FD4F65523161A6E0032EC95 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */; };
-		3FD4F65623161A6E0032EC95 /* CryptorRSADigest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,13 +82,11 @@
 		3FD1D20722E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEncryptionKeyUseCase.swift; sourceTree = "<group>"; };
 		3FD1D20B22E52D61006D1B26 /* DirectCheckoutGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckoutGateway.swift; sourceTree = "<group>"; };
 		3FD1D20E22E535CD006D1B26 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
-		3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAConstants.swift; sourceTree = "<group>"; };
 		3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAErrors.swift; sourceTree = "<group>"; };
 		3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAUtilities.swift; sourceTree = "<group>"; };
 		3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAKey.swift; sourceTree = "<group>"; };
 		3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSA.swift; sourceTree = "<group>"; };
 		3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
-		3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSADigest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,13 +300,11 @@
 		3FD4F64623161A6E0032EC95 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				3FD4F64723161A6E0032EC95 /* CryptorRSAConstants.swift */,
+				3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */,
 				3FD4F64823161A6E0032EC95 /* CryptorRSAErrors.swift */,
 				3FD4F64923161A6E0032EC95 /* CryptorRSAUtilities.swift */,
 				3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */,
-				3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */,
 				3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */,
-				3FD4F64E23161A6E0032EC95 /* CryptorRSADigest.swift */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -434,7 +428,6 @@
 				3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */,
 				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FC82F4122E7DA2E005202BD /* String.swift in Sources */,
-				3FD4F65623161A6E0032EC95 /* CryptorRSADigest.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
 				3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */,
 				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
@@ -447,7 +440,6 @@
 				3F61655822E68ECC00F2E5A9 /* APIResult.swift in Sources */,
 				3FD1D20C22E52D61006D1B26 /* DirectCheckoutGateway.swift in Sources */,
 				3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */,
-				3FD4F64F23161A6E0032EC95 /* CryptorRSAConstants.swift in Sources */,
 				3FD1D20122E51A01006D1B26 /* Card.swift in Sources */,
 				3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */,
 				3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */,
@@ -529,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -587,7 +579,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -612,6 +604,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DirectCheckout/Client/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,6 +632,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = DirectCheckout/Client/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

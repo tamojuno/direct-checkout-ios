@@ -27,7 +27,7 @@ public struct Card: Codable {
     func encrypt(key: String) throws -> String {
         let publicKey = try CryptorRSA.createPublicKey(withPEM: key)
         let plainText = try CryptorRSA.createPlaintext(with: data())
-        let encrypted = try plainText.encrypted(with: publicKey, algorithm: .sha256)
+        let encrypted = try plainText.encrypted(with: publicKey)
         
         return encrypted!.base64String.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
     }
