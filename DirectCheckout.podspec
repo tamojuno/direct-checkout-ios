@@ -4,7 +4,6 @@ Pod::Spec.new do |spec|
   spec.version      = "1.0.0"
   spec.summary      = "SDK para criptografia e validação de dados do cartão de crédito para integração com a API de pagamentos da Juno/BoletoBancário."
   spec.homepage     = "http://www.juno.com.br"
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   spec.author             = { "Diego Trevisan Lara" => "diego@juno.com.br" }
 
   spec.ios.deployment_target = "11.0"
