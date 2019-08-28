@@ -69,46 +69,42 @@ DirectCheckout.getCardHash(card) { result in
 A biblioteca disponibilizada também possui uma série de métodos auxiliares para a validação de dados do cartão de crédito, conforme demonstrado a seguir:
 
 ```swift
-  /* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
-  DirectCheckout.isValidCardNumber("9999999999999999")
+/* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
+DirectCheckout.isValidCardNumber("9999999999999999")
 
-  /* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
-  DirectCheckout.isValidSecurityCode("9999999999999999", "111")
+/* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
+DirectCheckout.isValidSecurityCode("9999999999999999", "111")
 
-  /* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
-  DirectCheckout.isValidExpireDate("05", "2021")
+/* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
+DirectCheckout.isValidExpireDate(month: "05", year: "2021")
 
-  /* isValidCardData: Validação dos dados do cartão de crédito(retorna true se for válido) */
-  DirectCheckout.isValidCardData(card)
+/* isValidCardData: Validação dos dados do cartão de crédito(retorna true se for válido) */
+DirectCheckout.isValidCardData(card)
 
-  /* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
-  DirectCheckout.getCardType("9999999999999999")}
-
+/* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
+DirectCheckout.getCardType("9999999999999999")
 ```
 
 Algumas funções também podem ser acessadas diretamente da classe Card:
 
-```kotlin
+```swift
+let card = Card(cardNumber: "5448280000000007",
+                holderName: "Diego",
+                securityCode: "123",
+                expirationMonth: "01",
+                expirationYear: "2020")
 
-  val card = Card(
-    cardNumber = "999999999",
-    holderName = "Teste",
-    securityCode = "111",
-    expirationMonth = "6",
-    expirationYear = "2022"
-  )
+/* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
+card.validateNumber()
 
-  /* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
-  card.validateNumber()
+/* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
+card.validateCVC()
 
-  /* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
-  card.validateCVC()
+/* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
+card.validateExpireDate()
 
-  /* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
-  card.validateExpireDate()
-
-  /* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
-  card.getType()
+/* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
+card.getType()
 
 ```
 
