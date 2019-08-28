@@ -9,103 +9,66 @@ Para mais informações acesse nossa página de integração:
 
 [Integração via API](https://www.boletobancario.com/boletofacil/integration/integration.html) 
 
-## Setup
+## Instalação
 
 ### Cocoapods
 
-Adicione o SDK nas dependências do seu aplicativo através do arquivo `Podfile`
+Adicione o SDK nas dependências do seu aplicativo inserindo a seguinte linha no arquivo `Podfile`:
 
 ```
 pod 'DirectCheckout'
 ```
 
-No arquivo Manifest adicione a permissão de acesso à internet, e seu token público que pode ser obtido em nossa [página de integração](https://www.boletobancario.com/boletofacil/integration/integration.html) 
+Em seguida, instale as dependências pelo comando:
 
 ```bash
 pod install
 ```
 
-Na sua classe application inicialize o SDK:
-```kotlin
-class MyApplication:Application(){
+Na inicialização do aplicativo, preferencialmente na classe `AppDelegate`, faça a inicialização do SDK passando como parâmetro o seu token público, que pode ser obtido em nossa [página de integração](https://www.boletobancario.com/boletofacil/integration/integration.html):
 
-    override fun onCreate() {
-        super.onCreate()
-        DirectCheckout.initialize(this)
-    }
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+
+    DirectCheckout.initialize(publicToken: "AF2261A2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5")
+    
+    return true
 }
 ```
 
-Para utilizar o ambiente de testes (Sandbox) basta passar false no segundo parâmetro (prod):
+Opcionalmente também é possível escolher o ambiente de testes (Sandbox):
 
-```kotlin
-class MyApplication:Application(){
-
-    override fun onCreate() {
-        super.onCreate()
-        DirectCheckout.initialize(this, prod = false)
-    }
-}
+```swift
+DirectCheckout.initialize(publicToken: "AF2261A2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
 ```
-
 
 ## Utilização
 
-
 Detalhamos a seguir um exemplo de utilização de nossa biblioteca de como obter o hash do cartão de crédito:
 
-```kotlin
-  val card = Card(
-      cardNumber = "999999999",
-      holderName = "Teste",
-      securityCode = "111",
-      expirationMonth = "6",
-      expirationYear = "2022"
-  )
-
-  DirectCheckout.getCardHash(card, object : DirectCheckoutListener<String> {
-      
-      override fun onSuccess(cardHash: String) {
-          /* Sucesso - A variável cardHash conterá o hash do cartão de crédito */
-      }
-
-      override fun onFailure(exception: DirectCheckoutException) {
-          /* Erro - A variável exception conterá o erro ocorrido ao obter o hash */
-      }
-  })
+```swift
+let card = Card(cardNumber: "5448280000000007",
+                holderName: "Diego",
+                securityCode: "123",
+                expirationMonth: "01",
+                expirationYear: "2020")
+                
+DirectCheckout.getCardHash(card) { result in
+    do {
+        let hash = try result.get()
+        /* Sucesso - A variável hash conterá o hash do cartão de crédito */
+        
+    } catch let error {
+        /* Erro - A variável error conterá o erro ocorrido ao obter o hash */
+    }
+}
 ```
-
-Caso esteja utilizando a linguagem Java:
-
-```java
-  Card card  = new Card(
-      "9999 9999 9999 9999",
-      "Teste",
-      "111",
-      "6",
-      "2022"
-  );
-
-
-  DirectCheckout.getCardHash(card, new DirectCheckoutListener<String>() {
-      @Override
-      public void onSuccess(@NotNull String cardHash) {
-          /* Sucesso - A variável cardHash conterá o hash do cartão de crédito */
-      }
-
-      @Override
-      public void onFailure(@NotNull DirectCheckoutException exception) {
-          /* Erro - A variável exception conterá o erro ocorrido ao obter o hash */
-      }
-  });
-```
-
 
 ## Funções Auxiliares
 
 A biblioteca disponibilizada também possui uma série de métodos auxiliares para a validação de dados do cartão de crédito, conforme demonstrado a seguir:
 
-```kotlin
+```swift
   /* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
   DirectCheckout.isValidCardNumber("9999999999999999")
 
