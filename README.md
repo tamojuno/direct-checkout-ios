@@ -48,7 +48,7 @@ Detalhamos a seguir um exemplo de utilização de nossa biblioteca de como obter
 
 ```swift
 let card = Card(cardNumber: "5448280000000007",
-                holderName: "Diego",
+                holderName: "Antônio",
                 securityCode: "123",
                 expirationMonth: "01",
                 expirationYear: "2020")
@@ -89,7 +89,7 @@ Algumas funções também podem ser acessadas diretamente da classe Card:
 
 ```swift
 let card = Card(cardNumber: "5448280000000007",
-                holderName: "Diego",
+                holderName: "Antônio",
                 securityCode: "123",
                 expirationMonth: "01",
                 expirationYear: "2020")
