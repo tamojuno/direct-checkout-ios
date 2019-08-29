@@ -93,18 +93,21 @@ let card = Card(cardNumber: "5448280000000007",
                 securityCode: "123",
                 expirationMonth: "01",
                 expirationYear: "2020")
+                
+/* getType: Obtém o tipo de cartão de crédito (bandeira) */
+card.getType()
 
-/* isValidSecurityCode: Valida número do cartão de crédito (retorna true se for válido) */
+/* validateNumber: Valida número do cartão de crédito (retorna true se for válido) */
 card.validateNumber()
 
-/* isValidSecurityCode: Valida código de segurança do cartão de crédito (retorna true se for válido) */
+/* validateCVC: Valida código de segurança do cartão de crédito (retorna true se for válido) */
 card.validateCVC()
 
-/* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
+/* validateExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
 card.validateExpireDate()
 
-/* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
-card.getType()
+/* validate: Realiza todas as validações do cartão de crédito (retorna true se for válido ou lança um CardError especificando a falha) */
+card.validate()
 
 ```
 
