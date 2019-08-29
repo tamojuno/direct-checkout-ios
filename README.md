@@ -78,9 +78,6 @@ DirectCheckout.isValidSecurityCode("9999999999999999", "111")
 /* isValidExpireDate: Valida data de expiração do cartão de crédito (retorna true se for válido) */
 DirectCheckout.isValidExpireDate(month: "05", year: "2021")
 
-/* isValidCardData: Validação dos dados do cartão de crédito(retorna true se for válido) */
-DirectCheckout.isValidCardData(card)
-
 /* getCardType: Obtém o tipo de cartão de crédito (bandeira) */
 DirectCheckout.getCardType("9999999999999999")
 ```
