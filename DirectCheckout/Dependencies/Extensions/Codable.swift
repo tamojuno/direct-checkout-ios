@@ -34,9 +34,4 @@ extension Encodable {
         return json as! [String: Any]
     }
     
-    func jsonString() throws -> String {
-        let jsonString = try String(data: data(), encoding: .utf8).orThrow()
-        return jsonString
-    }
-    
 }

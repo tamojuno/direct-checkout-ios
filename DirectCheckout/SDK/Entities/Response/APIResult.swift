@@ -17,7 +17,7 @@ struct APIResult<T: Decodable>: Decodable {
         }
         
         guard let errorMessage = errorMessage else {
-            return .failure(DirectCheckoutError.unknown("A requisição falou mas o servidor não retorno uma mensagem de erro."))
+            return .failure(DirectCheckoutError.unknown("A requisição falhou mas o servidor não retornou uma mensagem de erro."))
         }
         
         let messageData = try errorMessage.data(using: String.Encoding.unicode).orThrow()

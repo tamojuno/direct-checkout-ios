@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */; };
+		3F2EFD8B22E691D9004B4C14 /* APIJunoStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EFD8A22E691D9004B4C14 /* APIJunoStrategy.swift */; };
 		3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F37936322E93EE5000D1DF7 /* CardUtils.swift */; };
 		3F61655422E68D1000F2E5A9 /* GetKeyPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */; };
 		3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */; };
@@ -17,7 +17,7 @@
 		3F7B245822E50ED4008DBE34 /* DirectCheckout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7B244A22E50ED4008DBE34 /* DirectCheckout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FC82F3F22E7D1FE005202BD /* GetCreditCardHashUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F3E22E7D1FE005202BD /* GetCreditCardHashUseCase.swift */; };
 		3FC82F4122E7DA2E005202BD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4022E7DA2E005202BD /* String.swift */; };
-		3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4222E7EB9D005202BD /* CardLabel.swift */; };
+		3FC82F4322E7EB9D005202BD /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC82F4222E7EB9D005202BD /* CardType.swift */; };
 		3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */; };
 		3FD1D1E322E5102E006D1B26 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E122E5102E006D1B26 /* APIClient.swift */; };
 		3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */; };
@@ -26,8 +26,6 @@
 		3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F122E5135F006D1B26 /* APIEndpoint.swift */; };
 		3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F222E5135F006D1B26 /* URLs.swift */; };
 		3FD1D1F622E513AA006D1B26 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F522E513AA006D1B26 /* Dictionary.swift */; };
-		3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F822E513FB006D1B26 /* APIError.swift */; };
-		3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D1F922E513FB006D1B26 /* GatewayError.swift */; };
 		3FD1D20122E51A01006D1B26 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20022E51A01006D1B26 /* Card.swift */; };
 		3FD1D20322E51AEA006D1B26 /* DirectCheckout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */; };
 		3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1D20422E51BB5006D1B26 /* Errors.swift */; };
@@ -39,6 +37,7 @@
 		3FD4F65223161A6E0032EC95 /* CryptorRSAKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */; };
 		3FD4F65423161A6E0032EC95 /* CryptorRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */; };
 		3FD4F65523161A6E0032EC95 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */; };
+		3FD4F65F231757B70032EC95 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F65E231757B70032EC95 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHtmlStrategy.swift; sourceTree = "<group>"; };
+		3F2EFD8A22E691D9004B4C14 /* APIJunoStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIJunoStrategy.swift; sourceTree = "<group>"; };
 		3F37936322E93EE5000D1DF7 /* CardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtils.swift; sourceTree = "<group>"; };
 		3F61655322E68D1000F2E5A9 /* GetKeyPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetKeyPayload.swift; sourceTree = "<group>"; };
 		3F61655522E68D4100F2E5A9 /* GetHashPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHashPayload.swift; sourceTree = "<group>"; };
@@ -65,7 +64,7 @@
 		3F7B245722E50ED4008DBE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FC82F3E22E7D1FE005202BD /* GetCreditCardHashUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCreditCardHashUseCase.swift; sourceTree = "<group>"; };
 		3FC82F4022E7DA2E005202BD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		3FC82F4222E7EB9D005202BD /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		3FC82F4222E7EB9D005202BD /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		3FD1D1E022E5102E006D1B26 /* IAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPIClient.swift; sourceTree = "<group>"; };
 		3FD1D1E122E5102E006D1B26 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPIStrategy.swift; sourceTree = "<group>"; };
@@ -74,8 +73,6 @@
 		3FD1D1F122E5135F006D1B26 /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		3FD1D1F222E5135F006D1B26 /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		3FD1D1F522E513AA006D1B26 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		3FD1D1F822E513FB006D1B26 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		3FD1D1F922E513FB006D1B26 /* GatewayError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayError.swift; sourceTree = "<group>"; };
 		3FD1D20022E51A01006D1B26 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3FD1D20222E51AEA006D1B26 /* DirectCheckout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectCheckout.swift; sourceTree = "<group>"; };
 		3FD1D20422E51BB5006D1B26 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -87,6 +84,7 @@
 		3FD4F64A23161A6E0032EC95 /* CryptorRSAKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSAKey.swift; sourceTree = "<group>"; };
 		3FD4F64C23161A6E0032EC95 /* CryptorRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptorRSA.swift; sourceTree = "<group>"; };
 		3FD4F64D23161A6E0032EC95 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		3FD4F65E231757B70032EC95 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,7 @@
 			children = (
 				3F61655722E68ECB00F2E5A9 /* APIResult.swift */,
 				3FD1D20022E51A01006D1B26 /* Card.swift */,
-				3FC82F4222E7EB9D005202BD /* CardLabel.swift */,
+				3FC82F4222E7EB9D005202BD /* CardType.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -175,7 +173,6 @@
 		3FD1D1DE22E5102E006D1B26 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				3FD1D1F722E513FB006D1B26 /* Errors */,
 				3FD1D1DF22E5102E006D1B26 /* Client */,
 				3FD1D1E422E5106F006D1B26 /* Strategy */,
 				3FD1D1F022E5135F006D1B26 /* Endpoint */,
@@ -196,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD1D1E722E5106F006D1B26 /* IAPIStrategy.swift */,
-				3F2EFD8A22E691D9004B4C14 /* APIHtmlStrategy.swift */,
+				3F2EFD8A22E691D9004B4C14 /* APIJunoStrategy.swift */,
 			);
 			path = Strategy;
 			sourceTree = "<group>";
@@ -208,6 +205,7 @@
 				3FD1D1EE22E5121D006D1B26 /* Optional.swift */,
 				3FD1D1F522E513AA006D1B26 /* Dictionary.swift */,
 				3FC82F4022E7DA2E005202BD /* String.swift */,
+				3FD4F65E231757B70032EC95 /* Error.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,15 +217,6 @@
 				3FD1D1F222E5135F006D1B26 /* URLs.swift */,
 			);
 			path = Endpoint;
-			sourceTree = "<group>";
-		};
-		3FD1D1F722E513FB006D1B26 /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				3FD1D1F822E513FB006D1B26 /* APIError.swift */,
-				3FD1D1F922E513FB006D1B26 /* GatewayError.swift */,
-			);
-			path = Errors;
 			sourceTree = "<group>";
 		};
 		3FD1D1FC22E51929006D1B26 /* Client */ = {
@@ -422,17 +411,16 @@
 				3FD1D1F322E5135F006D1B26 /* APIEndpoint.swift in Sources */,
 				3FD4F65023161A6E0032EC95 /* CryptorRSAErrors.swift in Sources */,
 				3FC82F3F22E7D1FE005202BD /* GetCreditCardHashUseCase.swift in Sources */,
-				3F2EFD8B22E691D9004B4C14 /* APIHtmlStrategy.swift in Sources */,
+				3F2EFD8B22E691D9004B4C14 /* APIJunoStrategy.swift in Sources */,
 				3FD1D20822E52B8B006D1B26 /* GetEncryptionKeyUseCase.swift in Sources */,
 				3FD1D1E222E5102E006D1B26 /* IAPIClient.swift in Sources */,
 				3F37936422E93EE5000D1DF7 /* CardUtils.swift in Sources */,
-				3FD1D1FB22E513FB006D1B26 /* GatewayError.swift in Sources */,
 				3FC82F4122E7DA2E005202BD /* String.swift in Sources */,
 				3FD1D1EA22E5106F006D1B26 /* IAPIStrategy.swift in Sources */,
-				3FC82F4322E7EB9D005202BD /* CardLabel.swift in Sources */,
+				3FC82F4322E7EB9D005202BD /* CardType.swift in Sources */,
 				3FD1D20F22E535CD006D1B26 /* Endpoints.swift in Sources */,
+				3FD4F65F231757B70032EC95 /* Error.swift in Sources */,
 				3F61655622E68D4100F2E5A9 /* GetHashPayload.swift in Sources */,
-				3FD1D1FA22E513FB006D1B26 /* APIError.swift in Sources */,
 				3FD1D1F422E5135F006D1B26 /* URLs.swift in Sources */,
 				3FD1D20522E51BB5006D1B26 /* Errors.swift in Sources */,
 				3FD4F65523161A6E0032EC95 /* Data+Extensions.swift in Sources */,

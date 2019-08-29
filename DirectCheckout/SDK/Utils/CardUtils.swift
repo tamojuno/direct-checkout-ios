@@ -8,20 +8,19 @@
 
 class CardUtils {
     
-    static func getCardType(_ cardNumber: String) -> CardLabelModel? {
-        return CardLabel.all().first(where: { $0.matches(cardNumber: cardNumber) })
+    static func getCardType(_ cardNumber: String) -> CardType? {
+        return CardType.allCases.first(where: { $0.assets().matches(cardNumber: cardNumber.onlyNumbers) })
     }
     
     static func validateNumber(_ cardNumber: String) -> Bool {
-//        let cardNo = cardNumber.replacingOccurrences(of: " ", with: "")
-//        guard let type = getCardType(cardNumber) else { return false }
-//        return type.cardLength == cardNo.count && validateNum(cardNo)
-        return false
+        let clearCardNumber = cardNumber.onlyNumbers
+        let cardType = getCardType(clearCardNumber)?.assets()
+        return cardType?.cardLength == clearCardNumber.count && luhnCheck(clearCardNumber)
     }
     
     static func validateCVC(_ cardNumber: String, _ securityCode: String) -> Bool {
-        let cardLabel = getCardType(cardNumber)
-        return cardLabel?.cvcLength == securityCode.count
+        let cardType = getCardType(cardNumber)?.assets()
+        return cardType?.cvcLength == securityCode.count
     }
     
     static func validateExpireDate(_ month: String, _ year: String) -> Bool {
@@ -35,48 +34,20 @@ class CardUtils {
         return expirationYear >= currentYear ? (expirationYear == currentYear ? expirationMonth > currentMonth : true) : false
     }
     
+    private static func luhnCheck(_ cardNumber: String) -> Bool {
+        var sum = 0
+        let reversedCharacters = cardNumber.reversed().map { String($0) }
+        
+        for (idx, element) in reversedCharacters.enumerated() {
+            guard let digit = Int(element) else { return false }
+            switch ((idx % 2 == 1), digit) {
+            case (true, 9): sum += 9
+            case (true, 0...8): sum += (digit * 2) % 9
+            default: sum += digit
+            }
+        }
+        
+        return sum % 10 == 0
+    }
+    
 }
-
-//internal object CardUtils {
-//
-//    fun getCardType(cardNumber: String) = CardLabel.getOrderedLabels().find {
-//        it.detector.containsMatchIn(cardNumber.replace(" ", ""))
-//    }
-//
-//    fun validateCVC(cardNumber: String, securityCode: String) =
-//        securityCode.length == getCardType(cardNumber)?.cvcLength
-//
-//    fun validateNumber(cardNumber: String): Boolean {
-//        val cardNo = cardNumber.replace(" ", "")
-//        val type = getCardType(cardNumber)
-//        return type != null && type.cardLength == cardNo.length && validateNum(cardNo)
-//    }
-//
-//    fun validateExpireDate(expirationMonth: String, expirationYear: String): Boolean {
-//        val today = Calendar.getInstance()
-//        val month = today.get(Calendar.MONTH)
-//        val year = today.get(Calendar.YEAR)
-//        if (expirationMonth.toInt() > 0 && expirationYear.toInt() > 0 && expirationYear.toInt() >= year) {
-//            if (expirationYear.toInt() == year) {
-//                return (expirationMonth.toInt() > month)
-//            }
-//            return true
-//        }
-//        return false
-//    }
-//
-//    private fun validateNum(cardNo: String): Boolean {
-//        var checkSumTotal = 0
-//
-//        for (digitCounter in cardNo.length - 1 downTo 0 step 2) {
-//            checkSumTotal += cardNo[digitCounter].toString().toInt()
-//            runCatching {
-//                (cardNo[digitCounter - 1].toString().toInt() * 2).toString().forEach {
-//                    checkSumTotal += it.toString().toInt()
-//                }
-//            }
-//        }
-//        return (checkSumTotal % 10 == 0)
-//    }
-//
-//}

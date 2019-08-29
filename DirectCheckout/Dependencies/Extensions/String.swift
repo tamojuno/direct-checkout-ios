@@ -8,18 +8,12 @@
 
 extension String {
     
-    func base64() throws -> String {
-        return try self.data(using: .utf8).orThrow().base64EncodedString()
-    }
-    
-    func base64Decoded() throws -> String {
-        let source = self.replacingOccurrences(of: "\r\n", with: "")
-        let decodedData = try Data(base64Encoded: source).orThrow()
-        return try String(data: decodedData, encoding: .utf8).orThrow()
-    }
-    
     func regex() -> NSRegularExpression {
         return try! NSRegularExpression(pattern: self, options: [])
+    }
+    
+    var onlyNumbers: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
     }
     
 }

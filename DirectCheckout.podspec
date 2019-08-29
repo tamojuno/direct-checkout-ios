@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DirectCheckout"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "SDK para criptografia e validação de dados do cartão de crédito para integração com a API de pagamentos da Juno/BoletoBancário."
   spec.homepage     = "http://www.juno.com.br"
   spec.author       = { "Diego Trevisan Lara" => "diego@juno.com.br" }

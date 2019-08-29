@@ -24,7 +24,7 @@ public class DirectCheckout {
             return
         }
         
-        let apiClient = APIClient(strategy: APIHtmlStrategy())
+        let apiClient = APIClient(strategy: APIJunoStrategy())
         let gateway = APIDirectCheckoutGateway(apiClient: apiClient)
         
         let getEncryptionKeyUseCase = GetEncryptionKeyUseCase(gateway: gateway)
@@ -41,18 +41,14 @@ public class DirectCheckout {
                     do {
                         let cardHash = try result.get()
                         completion(.success(cardHash))
-                    } catch let error as DirectCheckoutError {
-                        completion(.failure(error))
                     } catch {
-                        completion(.failure(DirectCheckoutError.underlying(error)))
+                        completion(.failure(error.makeError()))
                     }
                     
                 })
                 
-            } catch let error as DirectCheckoutError {
-                completion(.failure(error))
             } catch {
-                completion(.failure(DirectCheckoutError.underlying(error)))
+                completion(.failure(error.makeError()))
             }
             
         }
@@ -60,12 +56,12 @@ public class DirectCheckout {
     
     // MARK: - Aux functions
     
-    public static func isValidCardNumber(_ cardNumber: String) -> Bool {
-        return CardUtils.validateNumber(cardNumber)
+    static func getCardType(_ cardNumber: String) -> CardType? {
+        return CardUtils.getCardType(cardNumber)
     }
     
-    static func getCardType(_ cardNumber: String) -> String? {
-        return CardUtils.getCardType(cardNumber)?.name
+    public static func isValidCardNumber(_ cardNumber: String) -> Bool {
+        return CardUtils.validateNumber(cardNumber)
     }
     
     public static func isValidSecurityCode(_ cardNumber: String, _ securityCode: String) -> Bool {
@@ -74,25 +70,6 @@ public class DirectCheckout {
     
     public static func isValidExpireDate(month: String, year: String) -> Bool {
         return CardUtils.validateExpireDate(month, year)
-    }
-    
-    public static func isValidCardData(_ card: Card) throws -> Bool {
-//        if(card.holderName.isEmpty()){
-//            throw DirectCheckoutException("Invalid holder name")
-//        }
-//        if(!CardUtils.validateNumber(card.cardNumber)){
-//            throw DirectCheckoutException("Invalid card number")
-//        }
-//
-//        if(!CardUtils.validateCVC(card.cardNumber, card.securityCode)){
-//            throw DirectCheckoutException("Invalid security code")
-//        }
-//
-//        if(!CardUtils.validateExpireDate(card.expirationMonth, card.expirationYear)){
-//            throw DirectCheckoutException("Invalid expire date")
-//        }
-        
-        return true
     }
     
 }

@@ -11,14 +11,6 @@ import XCTest
 
 class DirectCheckoutTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testExample() {
 
         let expectation = XCTestExpectation(description: "teste")
@@ -35,17 +27,116 @@ class DirectCheckoutTests: XCTestCase {
 
     }
     
-    func testValidSecurityCode() {
-        XCTAssertTrue(DirectCheckout.isValidSecurityCode("4111111111111111", "666")) //visa
-        XCTAssertTrue(DirectCheckout.isValidSecurityCode("5105105105105100", "666")) //master
+    func test_card_type_name() {
+        XCTAssertEqual(CardType.visa.name, "Visa")
+        XCTAssertEqual(CardType.masterCard.name, "Mastercard")
+        XCTAssertEqual(CardType.elo.name, "Elo")
     }
     
-    func testValidExpireDate() {
-        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "05", year: "2018"))
-        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "06", year: "2019"))
-        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "07", year: "2019"))
-        XCTAssertTrue(DirectCheckout.isValidExpireDate(month: "08", year: "2019"))
-        XCTAssertTrue(DirectCheckout.isValidExpireDate(month: "09", year: "2020"))
+    func test_get_type() {
+        XCTAssertEqual(DirectCheckout.getCardType("4111111111111111"), .visa)
+        XCTAssertEqual(DirectCheckout.getCardType("5105-1051-0510-5100"), .masterCard)
+        XCTAssertEqual(DirectCheckout.getCardType("3400 0000 0000 009"), .amex)
+        XCTAssertEqual(DirectCheckout.getCardType("6362.9700.0045.7013"), .elo)
+    }
+    
+    func test_card_get_type() {
+        let card1 = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertEqual(card1.getType(), .visa)
+        
+        let card2 = Card(cardNumber: "5105105105105100", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertEqual(card2.getType(), .masterCard)
+        
+        let card3 = Card(cardNumber: "3400 0000 0000 009", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertEqual(card3.getType(), .amex)
+    }
+    
+    func test_valid_number() {
+        XCTAssertTrue(DirectCheckout.isValidCardNumber("4111111111111111"))
+        XCTAssertTrue(DirectCheckout.isValidCardNumber("5105105105105100"))
+        XCTAssertFalse(DirectCheckout.isValidCardNumber("1234123412341234"))
+        XCTAssertFalse(DirectCheckout.isValidCardNumber("0000000000000000"))
+    }
+    
+    func test_card_valid_number() {
+        let card1 = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertTrue(card1.validateNumber())
+        
+        let card2 = Card(cardNumber: "0000000000000000", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertFalse(card2.validateNumber())
+    }
+    
+    func test_valid_security_code() {
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("4111111111111111", "123")) //visa
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("5105105105105100", "987")) //master
+        
+        XCTAssertFalse(DirectCheckout.isValidSecurityCode("4111111111111111", "1234")) //visa
+        XCTAssertFalse(DirectCheckout.isValidSecurityCode("5105105105105100", "98")) //master
+    }
+    
+    func test_card_valid_security_code() {
+        let card1 = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertTrue(card1.validateCVC())
+        
+        let card2 = Card(cardNumber: "5105105105105100", holderName: "Holder", securityCode: "1234", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertFalse(card2.validateCVC())
+    }
+    
+    func test_valid_expire_date() {
+        for i in 1...100 {
+            let testDate = Calendar.current.date(byAdding: .month, value: i, to: Date())
+            let month = Calendar.current.component(.month, from: testDate!)
+            let year = Calendar.current.component(.year, from: testDate!)
+
+            XCTAssertTrue(DirectCheckout.isValidExpireDate(month: "\(month)", year: "\(year)"))
+        }
+        
+        for i in -100...0 {
+            let testDate = Calendar.current.date(byAdding: .month, value: i, to: Date())
+            let month = Calendar.current.component(.month, from: testDate!)
+            let year = Calendar.current.component(.year, from: testDate!)
+            
+            XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "\(month)", year: "\(year)"))
+        }
+        
+        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "03", year: "0"))
+        XCTAssertFalse(DirectCheckout.isValidExpireDate(month: "0", year: "2020"))
+    }
+    
+    func test_card_valid_expire_date() {
+        for i in 1...100 {
+            let testDate = Calendar.current.date(byAdding: .month, value: i, to: Date())
+            let month = Calendar.current.component(.month, from: testDate!)
+            let year = Calendar.current.component(.year, from: testDate!)
+            let card = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "\(month)", expirationYear: "\(year)")
+            
+            XCTAssertTrue(card.validateExpireDate())
+        }
+        
+        for i in -100...0 {
+            let testDate = Calendar.current.date(byAdding: .month, value: i, to: Date())
+            let month = Calendar.current.component(.month, from: testDate!)
+            let year = Calendar.current.component(.year, from: testDate!)
+            let card = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "\(month)", expirationYear: "\(year)")
+            
+            XCTAssertFalse(card.validateExpireDate())
+        }
+    }
+    
+    func test_card_validade() {
+        var card: Card
+        
+        card = Card(cardNumber: "4111111111111111", holderName: "", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertThrowsError(try card.validate())
+        
+        card = Card(cardNumber: "0000000000000000", holderName: "Holder", securityCode: "123", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertThrowsError(try card.validate())
+        
+        card = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "1", expirationMonth: "03", expirationYear: "2020")
+        XCTAssertThrowsError(try card.validate())
+        
+        card = Card(cardNumber: "4111111111111111", holderName: "Holder", securityCode: "123", expirationMonth: "01", expirationYear: "1990")
+        XCTAssertThrowsError(try card.validate())
     }
 
 }

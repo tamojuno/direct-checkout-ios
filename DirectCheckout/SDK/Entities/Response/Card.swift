@@ -6,8 +6,6 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-//import CryptorRSA
-
 public struct Card: Codable {
     
     let cardNumber: String
@@ -17,11 +15,11 @@ public struct Card: Codable {
     let expirationYear: String
     
     public init(cardNumber: String, holderName: String, securityCode: String, expirationMonth: String, expirationYear: String) {
-        self.cardNumber = cardNumber
+        self.cardNumber = cardNumber.onlyNumbers
         self.holderName = holderName
-        self.securityCode = securityCode
-        self.expirationMonth = expirationMonth
-        self.expirationYear = expirationYear
+        self.securityCode = securityCode.onlyNumbers
+        self.expirationMonth = expirationMonth.onlyNumbers
+        self.expirationYear = expirationYear.onlyNumbers
     }
     
     func encrypt(key: String) throws -> String {
@@ -32,4 +30,71 @@ public struct Card: Codable {
         return encrypted!.base64String.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
     }
     
+}
+
+// MARK: - Aux functions
+
+extension Card {
+    
+    func getType() -> CardType? {
+        return CardUtils.getCardType(cardNumber)
+    }
+    
+    func validateNumber() -> Bool {
+        return CardUtils.validateNumber(cardNumber)
+    }
+    
+    func validateCVC() -> Bool {
+        return CardUtils.validateCVC(cardNumber, securityCode)
+    }
+    
+    func validateExpireDate() -> Bool {
+        return CardUtils.validateExpireDate(expirationMonth, expirationYear)
+    }
+    
+    func validate() throws -> Bool {
+        guard !holderName.isEmpty else {
+            throw CardError.emptyHolderName
+        }
+        
+        guard validateNumber() else {
+            throw CardError.invalidCardNumber
+        }
+        
+        guard validateCVC() else {
+            throw CardError.invalidSecurityCode
+        }
+        
+        guard validateExpireDate() else {
+            throw CardError.invalidExpireDate
+        }
+        
+        return true
+    }
+    
+}
+
+// MARK: - Errors
+
+public enum CardError: LocalizedError {
+    case emptyHolderName
+    case invalidCardNumber
+    case invalidSecurityCode
+    case invalidExpireDate
+    
+    public var errorDescription: String? {
+        switch self {
+        case .emptyHolderName:
+            return "Nome do titular inválido."
+            
+        case .invalidCardNumber:
+            return "Número do cartão inválido."
+            
+        case .invalidSecurityCode:
+            return "Código de segurança inválido."
+            
+        case .invalidExpireDate:
+            return "Data de expiração inválida."
+        }
+    }
 }
