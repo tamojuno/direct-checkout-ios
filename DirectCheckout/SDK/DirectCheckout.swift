@@ -6,16 +6,20 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-public class DirectCheckout {
+@objc public class DirectCheckout: NSObject {
     
     private static var publicToken: String?
     
-    public static func initialize(publicToken: String, environment: APIEnvionment = .production) {
+    @objc public static func initialize(publicToken: String, environment: APIEnvionment = .production) {
         self.publicToken = publicToken
         APIEnvionment.current = environment
     }
     
     // MARK: - Get hash
+    
+    @objc public static func getCardHash(card: Card, success: (_ hash: String) -> Void, error: (_ error: Error) -> Void) {
+
+    }
     
     public static func getCardHash(_ card: Card, completion: @escaping (Result<String, DirectCheckoutError>) -> Void) {
         

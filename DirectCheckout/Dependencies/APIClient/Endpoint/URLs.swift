@@ -9,24 +9,33 @@
 // MARK: - Enums
 
 struct APIEndpointUrl {
-    let base: APIEnvionment
+    let environment: APIEnvionment
     let path: EndpointPath
     
-    init(base: APIEnvionment = .current, path: EndpointPath) {
-        self.base = base
+    init(environment: APIEnvionment = .current, path: EndpointPath) {
+        self.environment = environment
         self.path = path
     }
     
     var url: String {
-        return "\(base.rawValue)\(path.value)"
+        return "\(environment.baseUrl)\(path.value)"
     }
 }
 
 // MARK: - Environment
 
-public enum APIEnvionment: String {
-    case production =   "https://www.boletobancario.com/boletofacil/integration/api"
-    case sandbox =      "https://sandbox.boletobancario.com/boletofacil/integration/api"
+@objc public enum APIEnvionment: Int {
+    case production
+    case sandbox
+    
+    var baseUrl: String {
+        switch self {
+        case .production:
+            return "https://www.boletobancario.com/boletofacil/integration/api"
+        case .sandbox:
+            return "https://sandbox.boletobancario.com/boletofacil/integration/api"
+        }
+    }
     
     static var current: APIEnvionment = .production
 }

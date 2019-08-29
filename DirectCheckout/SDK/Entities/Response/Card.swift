@@ -6,7 +6,7 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-public struct Card: Codable {
+@objc public class Card: NSObject, Codable {
     
     let cardNumber: String
     let holderName: String
@@ -14,7 +14,7 @@ public struct Card: Codable {
     let expirationMonth: String
     let expirationYear: String
     
-    public init(cardNumber: String, holderName: String, securityCode: String, expirationMonth: String, expirationYear: String) {
+    @objc public init(cardNumber: String, holderName: String, securityCode: String, expirationMonth: String, expirationYear: String) {
         self.cardNumber = cardNumber.onlyNumbers
         self.holderName = holderName
         self.securityCode = securityCode.onlyNumbers
