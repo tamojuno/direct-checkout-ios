@@ -67,11 +67,11 @@ class DirectCheckoutTests: XCTestCase {
     }
     
     func test_valid_security_code() {
-        XCTAssertTrue(DirectCheckout.isValidSecurityCode("4111111111111111", "123")) //visa
-        XCTAssertTrue(DirectCheckout.isValidSecurityCode("5105105105105100", "987")) //master
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("123", "4111111111111111")) //visa
+        XCTAssertTrue(DirectCheckout.isValidSecurityCode("987", "5105105105105100")) //master
         
-        XCTAssertFalse(DirectCheckout.isValidSecurityCode("4111111111111111", "1234")) //visa
-        XCTAssertFalse(DirectCheckout.isValidSecurityCode("5105105105105100", "98")) //master
+        XCTAssertFalse(DirectCheckout.isValidSecurityCode("1234", "4111111111111111")) //visa
+        XCTAssertFalse(DirectCheckout.isValidSecurityCode("98", "5105105105105100")) //master
     }
     
     func test_card_valid_security_code() {
