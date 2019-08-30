@@ -1,5 +1,6 @@
 # DirectCheckout iOS
 
+[![Build Status](https://app.bitrise.io/app/8284329639d88990/status.svg?token=kXRaOTYl23FiIuuy_5cCTg)](https://app.bitrise.io/app/8284329639d88990)
 ![CocoaPods Compatible](https://img.shields.io/cocoapods/v/DirectCheckout.svg)
 ![Platforms](https://img.shields.io/badge/platforms-iOS-333333.svg)
 ![Languages](https://img.shields.io/badge/languages-Swift%20%7C%20ObjC-333333.svg)
