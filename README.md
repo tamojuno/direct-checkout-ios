@@ -19,17 +19,33 @@ Para mais informações acesse nossa página de integração:
 
 ### Cocoapods
 
-Adicione o SDK nas dependências do seu aplicativo inserindo a seguinte linha no arquivo `Podfile`:
+Para integrar utilizando o gerenciador de dependências [CocoaPods](https://cocoapods.org/), especifique o SDK nas dependências inserindo a seguinte linha no arquivo `Podfile`:
 
 ```
 pod 'DirectCheckout'
 ```
 
-Em seguida, instale as dependências pelo comando:
+Em seguida, instale pelo comando:
 
 ```bash
 pod install
 ```
+
+### Carthage
+
+Caso prefira integrar utilizando o gerenciador de dependências decentralizado [Carthage](https://github.com/Carthage/Carthage), especifique o SDK a seguinte linha no arquivo `Cartfile`:
+
+```
+github "tamojuno/direct-checkout-ios"
+```
+
+Em seguida, gere a framework pelo comando:
+
+```bash
+carthage update
+```
+
+## Utilização
 
 Na inicialização do aplicativo, preferencialmente na classe `AppDelegate`, faça a inicialização do SDK passando como parâmetro o seu token público, que pode ser obtido em nossa [página de integração](https://www.boletobancario.com/boletofacil/integration/integration.html):
 
@@ -47,8 +63,6 @@ Opcionalmente também é possível escolher o ambiente de testes (Sandbox):
 ```swift
 DirectCheckout.initialize(publicToken: "AC2261A2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5", environment: .sandbox)
 ```
-
-## Utilização
 
 Detalhamos a seguir um exemplo de utilização de nossa biblioteca de como obter o hash do cartão de crédito:
 
