@@ -32,7 +32,7 @@ pod install
 
 Na inicialização do aplicativo, preferencialmente na classe `AppDelegate`, faça a inicialização do SDK passando como parâmetro o seu token público, que pode ser obtido em nossa [página de integração](https://www.boletobancario.com/boletofacil/integration/integration.html):
 
-```objc
+```objective-c
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [DirectCheckout initializeWithPublicToken:@"AC2261A2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5"];
@@ -43,7 +43,7 @@ Na inicialização do aplicativo, preferencialmente na classe `AppDelegate`, fa�
 
 Opcionalmente também é possível escolher o ambiente de testes (Sandbox):
 
-```objc
+```objective-c
 [DirectCheckout initializeWithPublicToken:@"AC2261A2ECC7FD90D205502092571F5C1C0831935E35073AA95AEBEB68D7E5C5" environment:APIEnvionmentSandbox];
 ```
 
@@ -51,7 +51,7 @@ Opcionalmente também é possível escolher o ambiente de testes (Sandbox):
 
 Detalhamos a seguir um exemplo de utilização de nossa biblioteca de como obter o hash do cartão de crédito:
 
-```objc
+```objective-c
 Card *card = [[Card alloc] initWithCardNumber:@"5448280000000007"
                                    holderName:@"Antônio"
                                  securityCode:@"123"
@@ -73,7 +73,7 @@ Card *card = [[Card alloc] initWithCardNumber:@"5448280000000007"
 
 A biblioteca disponibilizada também possui uma série de métodos auxiliares para a validação de dados do cartão de crédito, conforme demonstrado a seguir:
 
-```objc
+```objective-c
 /* isValidCardNumber: Valida número do cartão de crédito (retorna true se for válido) */
 [DirectCheckout isValidCardNumber:@"9999999999999999"];
 
@@ -86,7 +86,7 @@ A biblioteca disponibilizada também possui uma série de métodos auxiliares pa
 
 Algumas funções também podem ser acessadas diretamente da classe Card:
 
-```objc
+```objective-c
 Card *card = [[Card alloc] initWithCardNumber:@"5448280000000007"
                                    holderName:@"Antônio"
                                  securityCode:@"123"
