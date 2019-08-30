@@ -6,7 +6,7 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-public struct Card: Codable {
+public class Card: NSObject, Codable {
     
     let cardNumber: String
     let holderName: String
@@ -14,7 +14,7 @@ public struct Card: Codable {
     let expirationMonth: String
     let expirationYear: String
     
-    public init(cardNumber: String, holderName: String, securityCode: String, expirationMonth: String, expirationYear: String) {
+    @objc public init(cardNumber: String, holderName: String, securityCode: String, expirationMonth: String, expirationYear: String) {
         self.cardNumber = cardNumber.onlyNumbers
         self.holderName = holderName
         self.securityCode = securityCode.onlyNumbers
@@ -34,21 +34,21 @@ public struct Card: Codable {
 
 // MARK: - Aux functions
 
-extension Card {
+public extension Card {
     
     func getType() -> CardType? {
         return CardUtils.getCardType(cardNumber)
     }
     
-    func validateNumber() -> Bool {
+    @objc func validateNumber() -> Bool {
         return CardUtils.validateNumber(cardNumber)
     }
     
-    func validateCVC() -> Bool {
-        return CardUtils.validateCVC(cardNumber, securityCode)
+    @objc func validateCVC() -> Bool {
+        return CardUtils.validateCVC(securityCode, cardNumber)
     }
     
-    func validateExpireDate() -> Bool {
+    @objc func validateExpireDate() -> Bool {
         return CardUtils.validateExpireDate(expirationMonth, expirationYear)
     }
     
@@ -97,4 +97,20 @@ public enum CardError: LocalizedError {
             return "Data de expiração inválida."
         }
     }
+}
+
+// MARK: - Objective-C Support
+
+public extension Card {
+    
+    @available(swift, obsoleted: 0.1)
+    @objc func validate(success: (Card) -> Void, failure: (Error) -> Void) {
+        do {
+            _ = try validate()
+            success(self)
+        } catch {
+            failure(error)
+        }
+    }
+    
 }

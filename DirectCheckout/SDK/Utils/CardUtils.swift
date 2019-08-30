@@ -18,7 +18,7 @@ class CardUtils {
         return cardType?.cardLength == clearCardNumber.count && luhnCheck(clearCardNumber)
     }
     
-    static func validateCVC(_ cardNumber: String, _ securityCode: String) -> Bool {
+    static func validateCVC(_ securityCode: String, _ cardNumber: String) -> Bool {
         let cardType = getCardType(cardNumber)?.assets()
         return cardType?.cvcLength == securityCode.count
     }

@@ -24,7 +24,7 @@ struct CardTypeAssets {
     }
 }
 
-enum CardType: String, CaseIterable {
+public enum CardType: String, CaseIterable {
     case visa
     case masterCard
     case amex

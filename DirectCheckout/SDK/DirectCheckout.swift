@@ -6,16 +6,18 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
-public class DirectCheckout {
+public class DirectCheckout: NSObject {
     
     private static var publicToken: String?
     
-    public static func initialize(publicToken: String, environment: APIEnvionment = .production) {
+    // MARK: - Initialization
+    
+    @objc public static func initialize(publicToken: String, environment: APIEnvionment = .production) {
         self.publicToken = publicToken
         APIEnvionment.current = environment
     }
     
-    // MARK: - Get hash
+    // MARK: - Get card hash
     
     public static func getCardHash(_ card: Card, completion: @escaping (Result<String, DirectCheckoutError>) -> Void) {
         
@@ -60,16 +62,42 @@ public class DirectCheckout {
         return CardUtils.getCardType(cardNumber)
     }
     
-    public static func isValidCardNumber(_ cardNumber: String) -> Bool {
+    @objc public static func isValidCardNumber(_ cardNumber: String) -> Bool {
         return CardUtils.validateNumber(cardNumber)
     }
     
-    public static func isValidSecurityCode(_ cardNumber: String, _ securityCode: String) -> Bool {
-        return CardUtils.validateCVC(cardNumber, securityCode)
+    @objc(isValidSecurityCode:cardNumber:)
+    public static func isValidSecurityCode(_ securityCode: String, _ cardNumber: String) -> Bool {
+        return CardUtils.validateCVC(securityCode, cardNumber)
     }
     
+    @objc(isValidExpireDateMonth:year:)
     public static func isValidExpireDate(month: String, year: String) -> Bool {
         return CardUtils.validateExpireDate(month, year)
+    }
+    
+}
+
+// MARK: - Objective-C Support
+
+extension DirectCheckout {
+    
+    @available(swift, obsoleted: 0.1)
+    @objc public static func initialize(publicToken: String) {
+        initialize(publicToken: publicToken, environment: .production)
+    }
+    
+    @available(swift, obsoleted: 0.1)
+    @objc(getCardHash:success:failure:)
+    public static func getCardHash(card: Card, success: @escaping (_ hash: String) -> Void, failure: @escaping (_ error: Error) -> Void) {
+        getCardHash(card) { result in
+            switch result {
+            case .success(let hash):
+                success(hash)
+            case .failure(let error):
+                failure(error)
+            }
+        }
     }
     
 }
