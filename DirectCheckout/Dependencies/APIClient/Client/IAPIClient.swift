@@ -6,6 +6,8 @@
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 protocol IAPIClient {
     func execute<T: Decodable>(endpoint: APIEndpoint, completion: @escaping (Result<T, DirectCheckoutError>) -> Void)
 }

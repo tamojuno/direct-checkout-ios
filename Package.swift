@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "DirectCheckout",
+    platforms: [
+        .iOS(.v11),
+    ],
     products: [
         .library(name: "DirectCheckout", targets: ["DirectCheckout"]),
     ],

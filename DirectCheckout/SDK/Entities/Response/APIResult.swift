@@ -22,9 +22,7 @@ struct APIResult<T: Decodable>: Decodable {
             return .failure(DirectCheckoutError.unknown("A requisição falhou mas o servidor não retornou uma mensagem de erro."))
         }
         
-        let messageData = try errorMessage.data(using: String.Encoding.unicode).orThrow()
-        let attrString = try NSAttributedString(data: messageData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-        return .failure(DirectCheckoutError.remote(attrString.string))
+        return .failure(DirectCheckoutError.remote(errorMessage))
     }
     
 }
