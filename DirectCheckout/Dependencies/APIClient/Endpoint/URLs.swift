@@ -6,6 +6,8 @@
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 // MARK: - Enums
 
 struct APIEndpointUrl {

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 struct APIResult<T: Decodable>: Decodable {
     var success: Bool
     var data: T?

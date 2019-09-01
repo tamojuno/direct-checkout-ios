@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 protocol IGetEncryptionKeyUseCase {
     func get(publicToken: String, version: String, completion: @escaping (_ result: Result<String, DirectCheckoutError>) -> Void)
 }

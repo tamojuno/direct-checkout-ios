@@ -6,6 +6,8 @@
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 struct APIClient: IAPIClient {
     
     let strategy: IAPIStrategy

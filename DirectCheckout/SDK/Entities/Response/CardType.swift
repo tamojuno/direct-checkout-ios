@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 private let DEFAULT_CC_MASK = "0000  0000  0000  0000"
 private let DEFAULT_CVC_MASK = "000"
 

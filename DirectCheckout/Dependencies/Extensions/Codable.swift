@@ -6,6 +6,8 @@
 //  Copyright © 2018 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 extension Decodable {
     
     typealias T = Self

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 protocol IGetCreditCardHashUseCase {
     func get(publicToken: String, encryptedData: String, completion: @escaping (_ result: Result<String, DirectCheckoutError>) -> Void)
 }

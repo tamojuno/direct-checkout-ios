@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 public class Card: NSObject, Codable {
     
     let cardNumber: String

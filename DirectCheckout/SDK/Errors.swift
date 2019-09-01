@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 public enum DirectCheckoutError: LocalizedError {
     case notInitilizated
     case underlying(Error)

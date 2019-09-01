@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 protocol DirectCheckoutGateway {
     func getEncryptionKey(payload: GetKeyPayload, completion: @escaping (_ result: Result<String, DirectCheckoutError>) -> Void)
     func getCreditCardHash(payload: GetHashPayload, completion: @escaping (_ result: Result<String, DirectCheckoutError>) -> Void)

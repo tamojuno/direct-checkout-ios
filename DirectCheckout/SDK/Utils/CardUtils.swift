@@ -6,6 +6,8 @@
 //  Copyright © 2019 Juno Pagamentos. All rights reserved.
 //
 
+import Foundation
+
 class CardUtils {
     
     static func getCardType(_ cardNumber: String) -> CardType? {
