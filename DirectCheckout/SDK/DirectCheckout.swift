@@ -58,8 +58,12 @@ public class DirectCheckout: NSObject {
     
     // MARK: - Aux functions
     
-    static func getCardType(_ cardNumber: String) -> CardType? {
+    public static func getCardType(_ cardNumber: String) -> CardType? {
         return CardUtils.getCardType(cardNumber)
+    }
+
+    @objc public static func getCardTypeName(_ cardNumber: String) -> String? {
+        return CardUtils.getCardType(cardNumber)?.name
     }
     
     @objc public static func isValidCardNumber(_ cardNumber: String) -> Bool {
